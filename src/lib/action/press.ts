@@ -1,4 +1,4 @@
-import { listen, noop, timeout } from '$lib/meta/index.js';
+import { listen, noop, timeout } from '../meta/index.js';
 
 /**
  * Dispatches a press event or calls a handler if pressed down for duration milliseconds.

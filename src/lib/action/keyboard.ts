@@ -1,6 +1,6 @@
-import { listen, capitalise } from '$lib/meta/index.js';
+import { listen, noop, capitalise } from '../meta/index.js';
 
-export type keyMap = { [key: string]: (...params: any) => any };
+export type keyMap = { [key: string]: Function };
 
 /**
  * Takes an `keyboard shortcut` string: e.g. `'shift+cmd+a'` and returns a string that normalises `meta`/`cmd`/`win` to `'Super'`,

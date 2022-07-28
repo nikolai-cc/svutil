@@ -1,4 +1,4 @@
-import { listen, noop } from '$lib/meta/index.js';
+import { listen, noop } from '../meta/index.js';
 
 /**
  * Executes a function when clicking anywhere but on the target node.

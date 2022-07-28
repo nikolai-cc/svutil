@@ -1,4 +1,4 @@
-import { listen } from '$lib/meta/index.js';
+import { listen } from '../meta/index.js';
 
 /**
  * Copies the textContent of the element (or a specified target) to clipboard on click.

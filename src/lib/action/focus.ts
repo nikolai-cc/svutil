@@ -1,4 +1,4 @@
-import { noop } from '$lib/meta/index.js';
+import { noop } from '../meta/index.js';
 
 /**
  * Focuses element when it mounts. Only works on focusable elements.

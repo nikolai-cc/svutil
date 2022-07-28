@@ -1,4 +1,4 @@
-import { stringify } from './json';
+import { stringify } from './json.js';
 
 /**
  * Function that caches the results of the passed function to prevent double (expensive) computations.

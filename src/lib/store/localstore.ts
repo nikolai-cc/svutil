@@ -1,5 +1,5 @@
 import { browser } from '$app/env';
-import { noop, stringify, parse } from '$lib/meta/index.js';
+import { noop, stringify, parse } from '../meta/index.js';
 import { writable } from 'svelte/store';
 
 /**

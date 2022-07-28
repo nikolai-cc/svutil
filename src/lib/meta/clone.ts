@@ -1,13 +1,11 @@
 /**
- * Function that deep clones any object
+ * Function that deep clones any object up to a maximum recursion depth.
  */
-export const clone = typeof structuredClone === 'function' ? structuredClone : _clone;
+ export const clone = (obj: any, depth: number = Infinity) => {
+    let parents: any[] = [];
+    let children: any[] = [];
 
-function _clone(obj: any) {
-	const parents: any[] = [];
-	const children: any[] = [];
-
-	const __clone = (obj: any) => {
+    const _clone = (obj: any, depth: number) => {
 		if (typeof obj !== 'object') {
 			return obj;
 		}
@@ -28,8 +26,8 @@ function _clone(obj: any) {
 		} else if (obj instanceof Promise) {
 			child = new Promise((res, rej) =>
 				obj.then(
-					(v) => res(__clone(v)),
-					(e) => rej(__clone(e))
+					(v) => res(_clone(v, depth - 1)),
+					(e) => rej(_clone(e, depth - 1))
 				)
 			);
 		} else {
@@ -44,19 +42,19 @@ function _clone(obj: any) {
 
 		if (obj instanceof Map) {
 			for (let [k, v] of obj) {
-				child.set(k, __clone(v));
+				child.set(k, _clone(v, depth - 1));
 			}
 		} else if (obj instanceof Set) {
 			for (let v of obj) {
-				child.add(__clone(v));
+				child.add(_clone(v, depth - 1));
 			}
 		} else {
 			for (let key in obj) {
-				child[key] = __clone(obj[key]);
+				child[key] = _clone(obj[key], depth - 1);
 			}
 		}
 		return child;
 	};
 
-	return __clone(obj);
-}
+	return _clone(obj, depth);
+};

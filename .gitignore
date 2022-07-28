@@ -6,6 +6,12 @@ node_modules
 .env
 .env.*
 !.env.example
+.vscode
 
 # used for janky brain farts, don't commit
 /src/routes/temp
+
+# test files
+/test-results/
+/test/playwright-report/
+/test/playwright-template/.cache/

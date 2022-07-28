@@ -1,4 +1,4 @@
-import { listen } from '$lib/meta/index.js';
+import { listen } from '../meta/index.js';
 
 /**
  * Allows positioning of an element by dragging it from the element or an optional handle.

@@ -1,4 +1,4 @@
-import { listen } from '$lib/meta/index.js';
+import { listen } from '../meta/index.js';
 
 /**
  * Downloads the textContent of the element (or a specified target) into a .txt file on click.
